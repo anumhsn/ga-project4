@@ -1,4 +1,6 @@
 import React from 'react';
+import {Route, Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 
 class Categories extends React.Component{
     render(){
@@ -6,7 +8,10 @@ class Categories extends React.Component{
             <div className="all-categories">
                 {
                     this.props.categories.map((cats) => (
-                        <div key={cats.id}>
+                        <div key={cats.id}
+                        onClick={()=>
+                            this.props.history.push(`/categories/${cats.id}/restaurants`)
+                        }>
                             <p>{cats.name}</p>
                             
                         </div>
@@ -17,4 +22,4 @@ class Categories extends React.Component{
     }
 }
 
-export default Categories;
+export default withRouter(Categories);
