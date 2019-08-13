@@ -22,6 +22,17 @@
 ### MVP
 - App will show at least 4 categories as the landing page. Clicking on each category will show all the restaurants from that category, with one restaurant taking up the entire screen. If the user clicks yes, more info is shown about the restaurant. If no, then another restaurant is automatically shown. User can also add/edit/delete restaurants.
 
+### Component Hierarchy
+- Home
+    - Categories
+        - Restaurants
+            - moreInfo
+        - CreateRestaurant
+        - UpdateRestaurant
+        - DeleteRestaurant
+    - Create Category
+    
+
 ### Post MVP
 - There will be a save button on each restaurant so that the user can look at a saved list of restaurants. 
 

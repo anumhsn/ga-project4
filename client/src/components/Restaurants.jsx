@@ -1,7 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom'
 import {withRouter} from 'react-router-dom';
-import { async } from 'q';
 import { fetchRestaurants } from '../api-helper';
 
 class Restaurants extends React.Component{
@@ -27,7 +26,13 @@ class Restaurants extends React.Component{
                     this.state.restaurants.map((rest) => 
                     (
                         <div key={rest.id}>
-                            <p>{rest.name}</p>
+                            <h3>{rest.name}</h3>
+                            <p>{rest.location}</p>
+                            <img src={rest.rest_img}/>
+                            <img src={rest.food_img}/>
+                            <p>{rest.description}</p>
+                            <p>Rating: {rest.rating}</p>
+                            <a href={rest.link}>Yelp</a>
                         </div>
                     ))
                 }

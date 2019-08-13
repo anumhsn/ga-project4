@@ -13,7 +13,6 @@ class Categories extends React.Component{
                             this.props.history.push(`/categories/${cats.id}/restaurants`)
                         }>
                             <p>{cats.name}</p>
-                            
                         </div>
                     ))
                 }
