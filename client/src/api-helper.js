@@ -18,3 +18,8 @@ export const createRestaurant = async (cat_id, restData) => {
 export const deleteOneRestaurant = async (cat_id, id) =>{
     await axios.delete(`http://localhost:3000/categories/${cat_id}/restaurants/${id}`);
 }
+
+export const updateOneRestaurant = async (data) => {
+    const resp = await axios.put(`http://localhost:3000/categories/${cat_id}/restaurants/${id}`,data);
+    return resp.data;
+}
