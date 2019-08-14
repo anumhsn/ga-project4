@@ -1,7 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom'
 import {withRouter} from 'react-router-dom';
-import CreateCategories from './CreateCategories';
 
 class Categories extends React.Component{
     render(){
@@ -17,7 +16,7 @@ class Categories extends React.Component{
                         </div>
                     ))
                 }
-                <CreateCategories />
+                
             </div>    
         )
     }

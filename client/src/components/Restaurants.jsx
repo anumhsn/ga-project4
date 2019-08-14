@@ -1,7 +1,7 @@
 import React from 'react';
 import { fetchRestaurants } from '../api-helper';
 // import Carousel from "@brainhubeu/react-carousel";
-
+import CreateRestaurant from './CreateRestaurant'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ReactDOM from 'react-dom';
 
@@ -42,6 +42,9 @@ class Restaurants extends React.Component{
                     ))
                 }
                 {/* </Carousel> */}
+                <CreateRestaurant 
+                    category={this.props.category}
+                />
             </div>
         )
     }

@@ -36,6 +36,7 @@ class App extends React.Component{
           return <Restaurants
             cat_id={cat_id}
             category={category}
+            restaurants={this.state.restaurants}
           />
         }
         
