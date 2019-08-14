@@ -1,12 +1,8 @@
 import React from 'react';
-import { fetchRestaurants } from '../api-helper';
-// import Carousel from "@brainhubeu/react-carousel";
+import { fetchRestaurants, deleteOneRestaurant } from '../api-helper';
 import CreateNewRestaurant from './CreateRestaurant'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import ReactDOM from 'react-dom';
 
-
-// const Carousel = require('react-responsive-carousel').Carousel;
 
 class Restaurants extends React.Component{
     constructor(props){
@@ -24,10 +20,19 @@ class Restaurants extends React.Component{
         })
        
     }
+
+    handledelete = async(cat_id, id) =>{
+        await deleteOneRestaurant(cat_id, id);
+        this.setState(prevState => ({
+            restaurants: prevState.restaurants.filter(
+              restaurant => restaurant.id !== parseInt(id)
+            )
+        }));
+    }
+
     render(){
         return(
             <div className="all-restaurants">
-                {/* <Carousel showArrows={true} > */}
                 {
                     this.state.restaurants.map((rest) => 
                     (
@@ -38,10 +43,14 @@ class Restaurants extends React.Component{
                             <img src={rest.food_img}/>
                             <p>Rating: {rest.rating}</p>
                             <a href={rest.link}>Yelp</a>
+                            <button onClick={()=>{
+                                const { id } = this.props.category;
+                                this.handledelete(id , rest.id)
+                                
+                                }}>Delete</button>
                         </div>
                     ))
                 }
-                {/* </Carousel> */}
                 <CreateNewRestaurant 
                     category={this.props.category}
                 />
@@ -49,5 +58,4 @@ class Restaurants extends React.Component{
         )
     }
 }
-// ReactDOM.render(<Restaurants />);
 export default Restaurants;
