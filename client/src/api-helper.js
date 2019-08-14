@@ -10,7 +10,7 @@ export const fetchRestaurants = async(cat_id) => {
     return restaurants.data;
 }
 
-export const createRestaurant = async (restData, cat_id) => {
+export const createRestaurant = async (cat_id, restData) => {
     const restaurant = await axios.post(`http://localhost:3000/categories/${cat_id}/restaurants`, {...restData, category_id: cat_id});
     return restaurant.data;
 }
