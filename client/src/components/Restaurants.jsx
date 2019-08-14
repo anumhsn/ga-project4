@@ -1,7 +1,8 @@
 import React from 'react';
-import { fetchRestaurants, deleteOneRestaurant } from '../api-helper';
+import { fetchRestaurants, deleteOneRestaurant, updateOneRestaurant } from '../api-helper';
 import CreateNewRestaurant from './CreateRestaurant'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import axios from 'axios'
 
 
 class Restaurants extends React.Component{
@@ -9,7 +10,15 @@ class Restaurants extends React.Component{
         super(props);
         this.state={
             restaurants: [],
-            id: this.props.cat_id
+            id: this.props.cat_id,
+            isEditing: false,
+            category_id_edit: null,
+            editformData: {
+                name: '',
+                location: '',
+                link: ''
+            },
+            editingId: null
         }
     }
 
@@ -30,6 +39,46 @@ class Restaurants extends React.Component{
         }));
     }
 
+    update = async(id, rest_id) => {
+        const data = this.state.editformData;
+        // const resp = await axios.put(`http://localhost:3000/categories/${cat_id}/restaurants/${id}`, data);
+        const resp = await updateOneRestaurant(id, rest_id, data);
+        const restaurant = resp.data;
+        this.setState(prevState=>({
+            restaurants: prevState.restaurants.map(r => (r.id === restaurant.id ? restaurant : r)),
+            editformData: {
+              name: '',
+              location: '',
+              link: ''
+            },
+            editingId: null
+          }))
+    }
+
+    // handleEditSubmit = (ev) => {
+    //     ev.preventDefault();
+    // }
+
+    edit = (id) => {
+        this.setState(prevState => {
+            const { name, location, link } = prevState.restaurants.find(r => r.id === id);
+            return {
+              editformData: { name, location, link },
+              editingId: id
+            };
+          });
+    }
+    handleChange = (ev) => {
+        const { target: { name, value } } = ev;
+        this.setState(prevState => ({
+          editformData: {
+            ...prevState.editformData,
+            [name]: value,
+          }
+        }));
+      }
+
+
     render(){
         return(
             <div className="all-restaurants">
@@ -46,8 +95,48 @@ class Restaurants extends React.Component{
                             <button onClick={()=>{
                                 const { id } = this.props.category;
                                 this.handledelete(id , rest.id)
-                                
                                 }}>Delete</button>
+                            
+                            {/*EDIT*/}
+                            <button
+                            onClick={()=>{
+                                this.setState({ isEditing: true, })
+                                this.edit(rest.id)
+                            }}>Edit</button>
+
+                            { this.state.isEditing && (
+                                <form className="formz" 
+                                onSubmit={()=> {
+                                        const { id } = this.props.category;
+                                        this.update(id, rest.id);
+                                    }}>
+                                  <input 
+                                    name="name" 
+                                    type="text" 
+                                    placeholder="name" 
+                                    onChange={this.handleChange}
+                                    value={this.state.editformData.name}
+                                    />
+                                  <input 
+                                    name="location" 
+                                    type="text"
+                                    placeholder="location" 
+                                    onChange={this.handleChange}
+                                    value={this.state.editformData.location}
+                                  />
+                                  <input 
+                                    name="link" 
+                                    type="text" 
+                                    placeholder="link" 
+                                    onChange={this.handleChange}
+                                    value={this.state.editformData.link}
+                                  />
+
+                                  <input type="submit" />
+                                </form>
+                              )
+                            }
+                            
                         </div>
                     ))
                 }
