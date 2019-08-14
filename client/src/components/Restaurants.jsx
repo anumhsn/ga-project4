@@ -1,7 +1,12 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom'
-import {withRouter} from 'react-router-dom';
 import { fetchRestaurants } from '../api-helper';
+// import Carousel from "@brainhubeu/react-carousel";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import ReactDOM from 'react-dom';
+
+
+// const Carousel = require('react-responsive-carousel').Carousel;
 
 class Restaurants extends React.Component{
     constructor(props){
@@ -22,6 +27,7 @@ class Restaurants extends React.Component{
     render(){
         return(
             <div className="all-restaurants">
+                {/* <Carousel showArrows={true} > */}
                 {
                     this.state.restaurants.map((rest) => 
                     (
@@ -30,15 +36,15 @@ class Restaurants extends React.Component{
                             <p>{rest.location}</p>
                             <img src={rest.rest_img}/>
                             <img src={rest.food_img}/>
-                            <p>{rest.description}</p>
                             <p>Rating: {rest.rating}</p>
                             <a href={rest.link}>Yelp</a>
                         </div>
                     ))
                 }
+                {/* </Carousel> */}
             </div>
         )
     }
 }
-
+// ReactDOM.render(<Restaurants />);
 export default Restaurants;
