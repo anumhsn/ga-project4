@@ -6,28 +6,31 @@ import {Route, Link} from 'react-router-dom'
 import Restaurants from './components/Restaurants';
 import Home from './components/Home';
 import Try from './components/trycard';
+import TitlePage from './components/TitlePage';
 
 
 class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-      categories: [],
-      restaurants: []
-    }
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state={
+  //     categories: [],
+  //     restaurants: []
+  //   }
+  // }
   
-  componentDidMount = async() => {
-    const categories = await fetchCategories();
-    this.setState({
-      categories: categories,
-    })
-  }
+  // componentDidMount = async() => {
+  //   const categories = await fetchCategories();
+  //   this.setState({
+  //     categories: categories,
+  //   })
+  // }
   
   render(){
     return (
       <div className="App">
-        <Link to='/home'>Home</Link>
+        <TitlePage />
+
+        {/* <Link to='/home'>Home</Link>
         <Link to='/categories/:cat_id/restaurants'></Link>
         
         <Route exact path="/home" render={()=> <Home /> } />
@@ -43,9 +46,8 @@ class App extends React.Component{
         }
         
       }
-        />
+        /> */}
 
-        {/* <Try /> */}
       </div>
     );
   }

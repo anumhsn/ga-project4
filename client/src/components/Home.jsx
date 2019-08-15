@@ -26,7 +26,7 @@ export default class Home extends Component {
     
     render() {
         return (
-            <div>
+            <div className="home">
             <h1>QuickBites</h1>
             <Link to='/categories/:cat_id/restaurants'></Link>
             <Categories 

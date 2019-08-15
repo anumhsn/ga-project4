@@ -1,15 +1,14 @@
-.App {
+.title-page {
   text-align: center;
   background: url('./app-images/background.jpg');
-  /* background-position: center right;
-  background-repeat: none; */
+  background-position: center right;
+  background-repeat: none;
   background-size: cover;
   min-height: 100vh;
   padding: 40px;
   /* filter: blur(1px); */
 
 }
-
 
 
 img{
