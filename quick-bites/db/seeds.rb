@@ -121,7 +121,7 @@ Restaurant.create([
 ])
 
 
-Category.create(name: "Vegan", img: "https://images.unsplash.com/photo-1510629954389-c1e0da47d414?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
+Category.create(name: "Vegan", img: "https://images.unsplash.com/photo-1511689660979-10d2b1aada49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80")
 
 Restaurant.create(
     name: "Jajaja",

@@ -32,7 +32,7 @@ export default class Home extends Component {
             <Categories 
             categories={this.state.categories}
             />
-            <Route path="/categories/:cat_id/restaurants" render={(props)=> {
+            <Route exact path="/categories/:cat_id/restaurants" render={(props)=> {
             const cat_id = parseInt(props.match.params.cat_id);
             const category = this.state.categories.find(cat => cat.id === cat_id);
 

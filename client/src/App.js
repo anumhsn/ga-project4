@@ -10,30 +10,31 @@ import TitlePage from './components/TitlePage';
 
 
 class App extends React.Component{
-  // constructor(props){
-  //   super(props);
-  //   this.state={
-  //     categories: [],
-  //     restaurants: []
-  //   }
-  // }
+  constructor(props){
+    super(props);
+    this.state={
+      categories: [],
+      restaurants: []
+    }
+  }
   
-  // componentDidMount = async() => {
-  //   const categories = await fetchCategories();
-  //   this.setState({
-  //     categories: categories,
-  //   })
-  // }
+  componentDidMount = async() => {
+    const categories = await fetchCategories();
+    this.setState({
+      categories: categories,
+    })
+  }
   
   render(){
     return (
       <div className="App">
-        <TitlePage />
+
 
         {/* <Link to='/home'>Home</Link>
-        <Link to='/categories/:cat_id/restaurants'></Link>
+        <Link to='/categories/:cat_id/restaurants'></Link> */}
         
-        <Route exact path="/home" render={()=> <Home /> } />
+        <Route path="/" exact render={()=> <TitlePage /> } />
+        <Route path="/home" render={()=> <Home /> } />
         <Route path="/categories/:cat_id/restaurants" render={(props)=> {
           const cat_id = parseInt(props.match.params.cat_id);
           const category = this.state.categories.find(cat => cat.id === cat_id);
@@ -46,7 +47,7 @@ class App extends React.Component{
         }
         
       }
-        /> */}
+        />
 
       </div>
     );

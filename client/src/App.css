@@ -53,14 +53,26 @@
 .each-category{
   font-size: 30px;
   text-align: center;
-  justify-items: center;
+  /* justify-items: center; */
   position: relative;
 }
 
-.each-category img {
-
+.cat-name{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: white;
+  font-weight: bold;
 }
-img{
+.each-category img {
+  height: 300px;
+  width: 350px;
+  border-radius: 15px;
+  
+}
+.all-restaurants img{
   height: 300px;
   width: 300px;
 }
