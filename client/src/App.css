@@ -36,10 +36,12 @@
 
 .home-link:hover { 
   background-color: rgb(223, 10, 10, 0.5);
+  cursor: pointer;
 }
 
 
 /* CATEGORIES/HOME PAGE */
+
 .home h1{
   font-family: 'Barriecito', cursive;
   text-align: center;
@@ -48,7 +50,9 @@
 
 .all-categories{
   display: grid;
-  grid-template-columns: 400px 400px;
+  width: 800px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   /* margin-left: 43vh; */
   margin: 0 auto;
 }
@@ -84,24 +88,26 @@
   text-align: center;
 }
 
+/* create restaurant form */
 .create-rest form{
   margin-left: 20%;
   margin-right: 20%;
 }
 
-.create-rest input{
-
-}
 .all-restaurants input{
   display: block;
-  /* margin-left: 5vw; */
-  /* padding: 5px; */
   width: 100%;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 18px;
+}
+
+/* edit form */
+.formz{
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .all-restaurants img{
   height: 300px;
