@@ -1,5 +1,5 @@
 import React from 'react';
-import {createRestaurant} from '../api-helper'
+import {createRestaurant} from '../api-helper';
 
 class CreateNewRestaurant extends React.Component{
     constructor(props){

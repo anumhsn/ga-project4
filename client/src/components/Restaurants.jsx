@@ -2,8 +2,6 @@ import React from 'react';
 import { fetchRestaurants, deleteOneRestaurant, updateOneRestaurant } from '../api-helper';
 import CreateNewRestaurant from './CreateRestaurant'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import axios from 'axios'
-
 
 class Restaurants extends React.Component{
     constructor(props){
@@ -41,7 +39,6 @@ class Restaurants extends React.Component{
 
     update = async(id, rest_id) => {
         const data = this.state.editformData;
-        // const resp = await axios.put(`http://localhost:3000/categories/${cat_id}/restaurants/${id}`, data);
         const resp = await updateOneRestaurant(id, rest_id, data);
         const restaurant = resp.data;
         this.setState(prevState=>({
@@ -55,9 +52,6 @@ class Restaurants extends React.Component{
           }))
     }
 
-    // handleEditSubmit = (ev) => {
-    //     ev.preventDefault();
-    // }
 
     edit = (id) => {
         this.setState(prevState => {
@@ -91,7 +85,7 @@ class Restaurants extends React.Component{
                             <img src={rest.rest_img}/>
                             <img src={rest.food_img}/>
                             <p>Rating: {rest.rating}</p>
-                            <a href={rest.link}>Yelp</a>
+                            <a href={rest.link}>{rest.link}</a>
                             <button onClick={()=>{
                                 const { id } = this.props.category;
                                 this.handledelete(id , rest.id)

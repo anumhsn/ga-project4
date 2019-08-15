@@ -3,6 +3,8 @@ import Categories from './Categories';
 import {Route, Link} from 'react-router-dom'
 import Restaurants from './Restaurants';
 import {fetchCategories, fetchRestaurants} from '../api-helper'
+// swipe cards
+
 
 
 export default class Home extends Component {

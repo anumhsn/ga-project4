@@ -4,7 +4,9 @@ import Categories from './components/Categories';
 import {fetchCategories, fetchRestaurants} from './api-helper'
 import {Route, Link} from 'react-router-dom'
 import Restaurants from './components/Restaurants';
-import Home from './components/Home'
+import Home from './components/Home';
+import Try from './components/trycard';
+
 
 class App extends React.Component{
   constructor(props){
@@ -14,7 +16,7 @@ class App extends React.Component{
       restaurants: []
     }
   }
-
+  
   componentDidMount = async() => {
     const categories = await fetchCategories();
     this.setState({
@@ -42,6 +44,8 @@ class App extends React.Component{
         
       }
         />
+
+        <Try />
       </div>
     );
   }
