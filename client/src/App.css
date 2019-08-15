@@ -40,21 +40,25 @@
 
 
 /* CATEGORIES/HOME PAGE */
-.home{
-  background-color: yellow;
+.home h1{
+  font-family: 'Barriecito', cursive;
+  text-align: center;
+  font-size: 100px;
 }
 
 .all-categories{
   display: grid;
   grid-template-columns: 400px 400px;
-  margin-left: 43vh;
+  /* margin-left: 43vh; */
+  margin: 0 auto;
 }
 
 .each-category{
   font-size: 30px;
   text-align: center;
-  /* justify-items: center; */
   position: relative;
+  margin-top: 20px;
+  padding: 0;
 }
 
 .cat-name{
@@ -71,6 +75,33 @@
   width: 350px;
   border-radius: 15px;
   
+}
+
+/* RESTAURANTS */
+.all-restaurants{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.create-rest form{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.create-rest input{
+
+}
+.all-restaurants input{
+  display: block;
+  /* margin-left: 5vw; */
+  /* padding: 5px; */
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
 }
 .all-restaurants img{
   height: 300px;
