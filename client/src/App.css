@@ -1,3 +1,4 @@
+/* LANDING PAGE */
 .title-page {
   text-align: center;
   background: url('./app-images/background.jpg');
@@ -6,12 +7,31 @@
   background-size: cover;
   min-height: 100vh;
   padding: 40px;
-  /* filter: blur(1px); */
-
 }
 
 .title-page h1{
   font-family: 'Barriecito', cursive;
+  color: white;
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+.title-page h3{
+  font-family: 'Gothic A1', sans-serif;
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  margin-bottom: 60px;
+}
+
+.home-link{
+  color: white;
+  padding: 14px 24px;
+  text-align: center; 
+  text-decoration: none;
+  background-color: red;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
 img{
