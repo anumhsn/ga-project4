@@ -45,7 +45,7 @@ class App extends React.Component{
       }
         />
 
-        <Try />
+        {/* <Try /> */}
       </div>
     );
   }
