@@ -80,7 +80,7 @@ class Restaurants extends React.Component{
                     this.state.restaurants.map((rest) => 
                     (
                         <div key={rest.id}>
-                            <h3>{rest.name}</h3>
+                            <h3 className="rest-name">{rest.name}</h3>
                             <p>{rest.location}</p>
                             <img src={rest.rest_img}/>
                             <img src={rest.food_img}/>

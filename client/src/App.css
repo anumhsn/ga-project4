@@ -29,11 +29,37 @@
   padding: 14px 24px;
   text-align: center; 
   text-decoration: none;
-  background-color: red;
+  background-color: rgb(223, 10, 10);
   font-weight: bold;
   border-radius: 6px;
 }
 
+.home-link:hover { 
+  background-color: rgb(223, 10, 10, 0.5);
+}
+
+
+/* CATEGORIES/HOME PAGE */
+.home{
+  background-color: yellow;
+}
+
+.all-categories{
+  display: grid;
+  grid-template-columns: 400px 400px;
+  margin-left: 43vh;
+}
+
+.each-category{
+  font-size: 30px;
+  text-align: center;
+  justify-items: center;
+  position: relative;
+}
+
+.each-category img {
+
+}
 img{
   height: 300px;
   width: 300px;

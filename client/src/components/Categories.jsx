@@ -8,11 +8,12 @@ class Categories extends React.Component{
             <div className="all-categories">
                 {
                     this.props.categories.map((cats) => (
-                        <div key={cats.id}
+                        <div className="each-category" key={cats.id}
                         onClick={()=>
                             this.props.history.push(`/categories/${cats.id}/restaurants`)
                         }>
-                            <p>{cats.name}</p>
+                            <p className="cat-name">{cats.name}</p>
+                            <img src={cats.img}/>
                         </div>
                     ))
                 }
