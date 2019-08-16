@@ -26,7 +26,7 @@
   background-color: rgba(184, 184, 184, 0.5);
   /* margin-left: 0 auto; */
   margin-left: 10%;
-  margin-right: 10%; 
+  margin-right: 10%;
 }
 
 .home-link{
@@ -169,7 +169,13 @@
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+  .all-restaurants{
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .all-restaurants{
+    display: block;
   }
 }
