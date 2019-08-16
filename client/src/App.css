@@ -22,6 +22,11 @@
   font-weight: 900;
   margin-bottom: 30px;
   margin-bottom: 60px;
+  padding: 10px;
+  background-color: rgba(184, 184, 184, 0.5);
+  /* margin-left: 0 auto; */
+  margin-left: 10%;
+  margin-right: 10%; 
 }
 
 .home-link{
@@ -57,6 +62,7 @@
   font-size: 100px;
   color: white;
   margin-top: 0;
+
 }
 
 .all-categories{
@@ -102,12 +108,23 @@
   text-align: center;
 }
 
+.one-rest{
+  margin-top: 60px;
+}
 /* create restaurant form */
+.create-rest {
+  margin-top: 60px;
+
+}
+
 .create-rest form{
   margin-left: 20%;
   margin-right: 20%;
 }
 
+.create-rest input[type=submit]{
+  background-color: red;
+}
 .all-restaurants input{
   display: block;
   width: 100%;
@@ -126,11 +143,33 @@
 .all-restaurants img{
   height: 300px;
   width: 300px;
+  border-radius: 13px;
 }
 
+.all-restaurants button{
+  display: block;
+  width: 15%;
+  padding: 7px;
+  background-color: red;
+  border-radius: 6px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 10px auto;
+}
 
+.all-restaurants a {
+  margin-bottom: 10px;
+}
 /* arrows */
 .rightArrow img{
   height: 40px;
 
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
