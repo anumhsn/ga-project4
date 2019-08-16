@@ -2,6 +2,8 @@ import React from 'react';
 import { fetchRestaurants, deleteOneRestaurant, updateOneRestaurant } from '../api-helper';
 import CreateNewRestaurant from './CreateRestaurant'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import RightArrow from './arrows';
+import LeftArrow from './left-arrow';
 
 class Restaurants extends React.Component{
     constructor(props){
@@ -16,7 +18,8 @@ class Restaurants extends React.Component{
                 location: '',
                 link: ''
             },
-            editingId: null
+            editingId: null,
+            currentIndex: 0
         }
     }
 
@@ -75,7 +78,11 @@ class Restaurants extends React.Component{
 
     render(){
         return(
+          <div className="trial">
+            {/* <RightArrow /> */}
+          
             <div className="all-restaurants">
+                
                 {
                     this.state.restaurants.map((rest) => 
                     (
@@ -137,6 +144,7 @@ class Restaurants extends React.Component{
                 <CreateNewRestaurant 
                     category={this.props.category}
                 />
+            </div>
             </div>
         )
     }
