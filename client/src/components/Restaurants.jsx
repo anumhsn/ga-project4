@@ -2,8 +2,6 @@ import React from 'react';
 import { fetchRestaurants, deleteOneRestaurant, updateOneRestaurant } from '../api-helper';
 import CreateNewRestaurant from './CreateRestaurant'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import RightArrow from './arrows';
-import LeftArrow from './left-arrow';
 
 class Restaurants extends React.Component{
     constructor(props){
@@ -51,7 +49,8 @@ class Restaurants extends React.Component{
               location: '',
               link: ''
             },
-            editingId: null
+            // editingId: null
+            restaurant_id_edit: null
           }))
     }
 
@@ -61,7 +60,8 @@ class Restaurants extends React.Component{
             const { name, location, link } = prevState.restaurants.find(r => r.id === id);
             return {
               editformData: { name, location, link },
-              editingId: id
+              // editingId: id
+              restaurant_id_edit: id
             };
           });
     }
@@ -89,7 +89,6 @@ class Restaurants extends React.Component{
                         <div className="one-rest" key={rest.id}>
                             <h3 className="rest-name">{rest.name}</h3>
                             <p>{rest.location}</p>
-                            {/* <img src={rest.rest_img}/> */}
                             <img src={rest.food_img}/>
                             <p>Rating: {rest.rating}</p>
                             <a href={rest.link}>{rest.link}</a>
@@ -105,7 +104,7 @@ class Restaurants extends React.Component{
                                 this.edit(rest.id)
                             }}>Edit</button>
 
-                            { this.state.isEditing && (
+                            { this.state.isEditing && (this.state.restaurant_id_edit === rest.id) && (
                                 <form className="formz" 
                                 onSubmit={()=> {
                                         const { id } = this.props.category;
