@@ -5,7 +5,6 @@ import {fetchCategories, fetchRestaurants} from './api-helper'
 import {Route, Link} from 'react-router-dom'
 import Restaurants from './components/Restaurants';
 import Home from './components/Home';
-import Try from './components/trycard';
 import TitlePage from './components/TitlePage';
 
 

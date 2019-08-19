@@ -80,7 +80,7 @@ class Restaurants extends React.Component{
         return(
           <div className="trial">
             {/* <RightArrow /> */}
-          
+            <p className="link-home"><a  href="http://localhost:3001/home">QuickBites</a></p>
             <div className="all-restaurants">
                 
                 {
