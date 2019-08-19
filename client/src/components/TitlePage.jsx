@@ -30,20 +30,9 @@ class TitlePage extends React.Component{
                 <h3>Stuck on where to grab lunch? Look no further</h3>
 
                 <Link className="home-link" to='/categories'>Enter Site</Link>
-                {/* <Link to='/categories/:cat_id/restaurants'></Link>
-
-                <Route exact path="/home" render={()=> <Home /> } />
-                <Route exact path="/categories/:cat_id/restaurants" render={(props)=> {
-                    const cat_id = parseInt(props.match.params.cat_id);
-                    const category = this.state.categories.find(cat => cat.id === cat_id);
-
-                    return <Restaurants
-                        cat_id={cat_id}
-                        category={category}
-                        restaurants={this.state.restaurants}
-                     /> */}
-         
                 
+                
+
             </div>
         )
     }

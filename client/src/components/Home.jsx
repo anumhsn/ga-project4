@@ -3,6 +3,7 @@ import Categories from './Categories';
 import {Route, Link} from 'react-router-dom'
 import Restaurants from './Restaurants';
 import {fetchCategories, fetchRestaurants} from '../api-helper'
+import TitlePage from './TitlePage';
 // swipe cards
 
 
@@ -27,6 +28,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className="home">
+              {/* <TitlePage /> */}
               <h1>QuickBites</h1>
               <Link to='/categories/:cat_id/restaurants'></Link>
               <Categories 
