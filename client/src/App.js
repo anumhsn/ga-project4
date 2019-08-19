@@ -33,7 +33,7 @@ class App extends React.Component{
         <Link to='/categories/:cat_id/restaurants'></Link> */}
         
         <Route path="/" exact render={()=> <TitlePage /> } />
-        <Route path="/home" render={()=> <Home /> } />
+        <Route path="/categories" exact render={()=> <Home /> } />
         <Route path="/categories/:cat_id/restaurants" render={(props)=> {
           const cat_id = parseInt(props.match.params.cat_id);
           const category = this.state.categories.find(cat => cat.id === cat_id);

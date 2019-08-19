@@ -29,7 +29,7 @@ class TitlePage extends React.Component{
                 <h1>QuickBites</h1>
                 <h3>Stuck on where to grab lunch? Look no further</h3>
 
-                <Link className="home-link" to='/home'>Enter Site</Link>
+                <Link className="home-link" to='/categories'>Enter Site</Link>
                 {/* <Link to='/categories/:cat_id/restaurants'></Link>
 
                 <Route exact path="/home" render={()=> <Home /> } />
